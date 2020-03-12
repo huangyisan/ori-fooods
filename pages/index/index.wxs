@@ -1,0 +1,27 @@
+function tapName(event, ownerInstance) {
+  var owner = ownerInstance.selectAllComponents('.inner')
+  console.log(owner)
+  for (var i = 0; i < owner.length; i++) {
+    owner[i].removeClass('active');
+    console.log('.inner_' + i)
+  }
+  var instance = ownerInstance.selectComponent('.inner_' + event.currentTarget.dataset.index)
+  // instance.setStyle({
+  //   "font-size": "14px", // 支持rpx
+  //   "color": "red"
+  // })
+  instance.addClass('active')
+  instance.getDataset()
+  console.log('done')
+  // this.setData({
+  //   currentIndex:9
+  // })
+
+  // console.log('tap wechat', (event.timeStamp))
+  // console.log(JSON.stringify(event))
+  // console.log(currentIndex)
+  // console.log(JSON.stringify(ownerInstance))
+}
+module.exports = {
+  tapName: tapName
+}

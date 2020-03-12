@@ -1,9 +1,10 @@
 <!--index.wxml-->
+<wxs module="wxs" src="./index.wxs"></wxs>
 <view class="container">
 <view>
 <scroll-view scroll-y="true" class="scroll">
 <block wx:for="{{leftData}}" wx:for-item="lcai" wx:key="index">
-<view bindtap="btnClick" data-index="{{index}}" class="inner {{currentIndex == index? 'active' : ''}}">{{lcai.name}}</view>
+<view bindtap="{{wxs.tapName}}" data-index="{{index}}" class="inner inner_{{index}}">{{lcai.name}}</view>
 <!-- <view bindtap="btnClick">{{index}}</view> -->
 </block>
 </scroll-view>
